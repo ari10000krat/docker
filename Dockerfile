@@ -1,7 +1,12 @@
-FROM ubuntu
+FROM busybox
+RUN echo "This should work"
 
-MAINTAINER Gleb Ksendziuk <gleb.ksendziuk@gmail.com> 
-RUN apt-get update && apt-get install -y cowsay fortune
-COPY entrypoint.sh /
+RUN /bin/bash -c echo "This won't"
 
-ENTRYPOINT [ "/usr/games/cowsay" ]
+# FROM ubuntu
+
+# MAINTAINER Gleb Ksendziuk <gleb.ksendziuk@gmail.com> 
+# RUN apt-get update && apt-get install -y cowsay fortune
+# COPY entrypoint.sh /
+
+# ENTRYPOINT [ "/usr/games/cowsay" ]
